@@ -2,7 +2,8 @@
 title: Module's Requirements
 ---
 
-## Module Requirements
+## **Module Requirements**
+
 For this project I'm focusing on the drive system to ensure the overall submarine can move.  
 
 | **Requirement Description** | **Measure of<br> Threshold** | **Target<br>Measure** |**Stretch<br>Requirement<br>(Y-N)**|
