@@ -24,9 +24,12 @@ I will choose option ["1. IC HALF BRIDGE DRIVER 6A 12DSO](https://www.digikey.co
 
 ### Power Management
 
-**Chosen Voltage Regulator**:
+**Chosen Voltage Regulator 3.3V Line**:
 
-I will choose option ["2. IC REG DL BUCK/LNR 2MHZ 16TSSOP"](https://www.digikey.com/en/products/detail/allegro-microsystems/A4402KLPTR-T/2783710) for this project. It offers channels that I can use to successfully get two different power outputs from the same channel to protect my board. This in turn helps ensure device is stable and has fewer failure points. This device is better due to its lower price, larger pin spread, and increased amperage on the output power pins.
+I will choose option ["4. IC REG BUCK 3.3V 2A TSOT23-6"](https://www.digikey.com/en/products/detail/diodes-incorporated/AP63203WU-7/9858426) for this project. It offers channels that I can use to successfully to get the 3.3v line powered with some extra current to allow for additional features like RC Servos. This will in turn help the project respond in more intuitive ways while providing a decent part with a reduced budget requirement. Furthermore, it does meet project requirements.
+
+**Chosen Voltage Regulator 5V Line**:
+I will choose option ["5. IC REG BUCK ADJ 2.5A 20HTSSOP"](https://www.digikey.com/en/products/detail/texas-instruments/LM5005MHX-NOPB/1871800) for this project. It is not ideal to have 2 regulators selected for the project but it does help while reducing costs. This also allows us to meet the project requirements and power budget requirements for my sub module.
 
 ## **Components**
 
@@ -165,3 +168,35 @@ I will choose option ["2. IC REG DL BUCK/LNR 2MHZ 16TSSOP"](https://www.digikey.
     | Built in current reduction                | Current is reduced below required elements                       |
     | Smallest package                          | Datasheet isn't legible at quick glances                         |
     | Offers thermal protection                 |                                                                  |
+
+4. IC REG BUCK 3.3V 2A TSOT23-6
+    ![Datasheet Buck 3.3v 2A](resources/Images/Buck2A.png)
+
+    * $0.71/each
+    * [Digikey for Buck 2A](https://www.digikey.com/en/products/detail/diodes-incorporated/AP63203WU-7/9858426)
+    * [Datasheet for Buck 2A](resources/pdf/Buck2A.pdf)
+
+    | Pros                                      | Cons                                                             |
+    | ----------------------------------------- | ---------------------------------------------------------------- |
+    | Handles a 3.3V and 5v line                | Current is below required elements unless its the 3.3v line      |
+    | Equations are upfront with diagram in datasheet | Can't be put in sync with another regulator                |
+
+5. IC REG BUCK ADJ 2.5A 20HTSSOP
+    ![Image BuckADJ2.5A](resources/Images/BuckADJ2.5A.png)
+
+    * $3.77/each
+    * [Digikey for Buck ADJ 2.5A](https://www.digikey.com/en/products/detail/texas-instruments/LM5005MHX-NOPB/1871800)
+    * [Datasheet for Buck ADJ 2.5A](resources/pdf/Buck2_5A.pdf)
+
+    | Pros                                      | Cons                                                             |
+    | ----------------------------------------- | ---------------------------------------------------------------- |
+    | Allows for a 5v line                      | Lots of seemingly extra pins                                     |
+    | Tolerance allows for 3.3v line            | Medium to high expensive ratio for this grouping                 |
+    | Can be synced with other lines through a clock | Typical application diagram is busy                         |
+
+<!-- Not putting the RC servo due it not meeting project requirements but it will be in the power budget. 
+https://www.digikey.com/en/products/detail/adafruit-industries-llc/4326/10419470
+SERVOMOTOR RC 3-6V W/ 3-PIN JST
+4326
+https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/694/4326_Web.pdf
+-->
