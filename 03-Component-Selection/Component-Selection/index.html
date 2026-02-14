@@ -885,8 +885,10 @@ For more details, review the ["Appendix - Component Selection Process - Actuator
 <p><strong>Chosen Actuator Driver</strong>:</p>
 <p>I will choose option <a href="https://www.digikey.com/en/products/detail/infineon-technologies/IFX9201SGAUMA1/5415542">"1. IC HALF BRIDGE DRIVER 6A 12DSO</a> for this project. Due to the knowledge built in the labs and the ability to daisy chain while keeping prices low this option becomes ideal. Furthermore, we are able to meet project requirements with one and if needed bypass it for the other two motors. Creating a backup that might be particularly necessary during a quick project sprint.</p>
 <h3 id="power-management">Power Management</h3>
-<p><strong>Chosen Voltage Regulator</strong>:</p>
-<p>I will choose option <a href="https://www.digikey.com/en/products/detail/allegro-microsystems/A4402KLPTR-T/2783710">"2. IC REG DL BUCK/LNR 2MHZ 16TSSOP"</a> for this project. It offers channels that I can use to successfully get two different power outputs from the same channel to protect my board. This in turn helps ensure device is stable and has fewer failure points. This device is better due to its lower price, larger pin spread, and increased amperage on the output power pins.</p>
+<p><strong>Chosen Voltage Regulator 3.3V Line</strong>:</p>
+<p>I will choose option <a href="https://www.digikey.com/en/products/detail/diodes-incorporated/AP63203WU-7/9858426">"4. IC REG BUCK 3.3V 2A TSOT23-6"</a> for this project. It offers channels that I can use to successfully to get the 3.3v line powered with some extra current to allow for additional features like RC Servos. This will in turn help the project respond in more intuitive ways while providing a decent part with a reduced budget requirement. Furthermore, it does meet project requirements.</p>
+<p><strong>Chosen Voltage Regulator 5V Line</strong>:
+I will choose option <a href="https://www.digikey.com/en/products/detail/texas-instruments/LM5005MHX-NOPB/1871800">"5. IC REG BUCK ADJ 2.5A 20HTSSOP"</a> for this project. It is not ideal to have 2 regulators selected for the project but it does help while reducing costs. This also allows us to meet the project requirements and power budget requirements for my sub module.</p>
 <h2 id="components"><strong>Components</strong></h2>
 <p><strong>DC Motor</strong></p>
 <ol>
@@ -1214,7 +1216,71 @@ For more details, review the ["Appendix - Component Selection Process - Actuator
 </tbody>
 </table>
 </li>
+<li>
+<p>IC REG BUCK 3.3V 2A TSOT23-6
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../resources/Images/Buck2A.png" data-desc-position="bottom"><img alt="Datasheet Buck 3.3v 2A" src="../resources/Images/Buck2A.png"></a></p>
+<ul>
+<li>$0.71/each</li>
+<li><a href="https://www.digikey.com/en/products/detail/diodes-incorporated/AP63203WU-7/9858426">Digikey for Buck 2A</a></li>
+<li><a href="../resources/pdf/Buck2A.pdf">Datasheet for Buck 2A</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Handles a 3.3V and 5v line</td>
+<td>Current is below required elements unless its the 3.3v line</td>
+</tr>
+<tr>
+<td>Equations are upfront with diagram in datasheet</td>
+<td>Can't be put in sync with another regulator</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>IC REG BUCK ADJ 2.5A 20HTSSOP
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../resources/Images/BuckADJ2.5A.png" data-desc-position="bottom"><img alt="Image BuckADJ2.5A" src="../resources/Images/BuckADJ2.5A.png"></a></p>
+<ul>
+<li>$3.77/each</li>
+<li><a href="https://www.digikey.com/en/products/detail/texas-instruments/LM5005MHX-NOPB/1871800">Digikey for Buck ADJ 2.5A</a></li>
+<li><a href="../resources/pdf/Buck2_5A.pdf">Datasheet for Buck ADJ 2.5A</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allows for a 5v line</td>
+<td>Lots of seemingly extra pins</td>
+</tr>
+<tr>
+<td>Tolerance allows for 3.3v line</td>
+<td>Medium to high expensive ratio for this grouping</td>
+</tr>
+<tr>
+<td>Can be synced with other lines through a clock</td>
+<td>Typical application diagram is busy</td>
+</tr>
+</tbody>
+</table>
+</li>
 </ol>
+<!-- Not putting the RC servo due it not meeting project requirements but it will be in the power budget. 
+https://www.digikey.com/en/products/detail/adafruit-industries-llc/4326/10419470
+SERVOMOTOR RC 3-6V W/ 3-PIN JST
+4326
+https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/694/4326_Web.pdf
+-->
 
 
 
